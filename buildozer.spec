@@ -12,5 +12,6 @@ android.minapi = 21
 icon.filename = icon.png
 android.sdk = 34
 android.ndk = 25b
+android.build_tools_version = 34.0.0
 android.accept_sdk_license = True  # 👈 Nueva línea clave
 p4a.branch = 2024.1.21  # 👈 Versión de python-for-android

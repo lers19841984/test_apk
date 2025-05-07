@@ -18,9 +18,16 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y git unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses-dev libtinfo6
 
-    - name: Install Buildozer with dependencies
+    - name: Install Buildozer
       run: |
         pip install buildozer==1.5.0 python-for-android==2024.1.21 cython==0.29.36
+
+    # PASO CLAVE 🔑 (nuevo)
+    - name: Aceptar licencias y instalar herramientas
+      run: |
+        mkdir -p ~/.android/licenses
+        echo "d56f5187479451eabf01fb78af6dfcb131a6481e" > ~/.android/licenses/android-sdk-license
+        yes | ~/.buildozer/android/platform/android-sdk/cmdline-tools/latest/bin/sdkmanager "build-tools;34.0.0"
 
     - name: Build APK
       run: |
@@ -29,5 +36,5 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: HolaMundoAPK
+        name: AppAPK
         path: bin/*.apk

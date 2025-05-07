@@ -1,36 +1,16 @@
 [app]
-
-# Configuración básica
-title = HolaMundo
-package.name = holamundo
-package.domain = com.midominio
+title = MiApp
+package.name = miapp
+package.domain = com.tudominio
 source.dir = .
-source.include_exts = py,png,jpg,kv,ttf,otf
 version = 1.0
-
-# Configuración principal
-requirements = python3==3.8.5,kivy==2.0.0  # Versiones específicas
+requirements = python3==3.8.5,kivy==2.0.0
 orientation = portrait
-fullscreen = 0
-
-# Entrada principal
-main.py = main.py
-
-# Icono (debe ser PNG y preferiblemente 512x512px)
-icon.filename = icon.png
-
-# Configuración Android
-android.api = 30
+android.build_tools_version = 34.0.0
+android.api = 34
 android.minapi = 21
-android.arch = armeabi-v7a
-
+icon.filename = icon.png
 android.sdk = 34
 android.ndk = 25b
-android.build_tools_version = 34.0.0
-
-
-
-
-
-# Opciones de compilación
-p4a.branch = master
+android.accept_sdk_license = True  # 👈 Nueva línea clave
+p4a.branch = 2024.1.21  # 👈 Versión de python-for-android
